@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= subject %></title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+    .header { background-color: #4F46E5; padding: 20px; color: white; text-align: center; border-radius: 5px 5px 0 0; }
+    .content { padding: 20px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 5px 5px; }
+    .button { 
+      display: inline-block; 
+      padding: 10px 20px; 
+      background-color: #4F46E5; 
+      color: white; 
+      text-decoration: none; 
+      border-radius: 5px; 
+      margin: 10px 0;
+    }
+    .footer { margin-top: 20px; font-size: 12px; color: #6b7280; text-align: center; }
+    .details { background-color: #f9fafb; padding: 15px; border-radius: 5px; margin: 15px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>New Booking Assigned</h1>
+    </div>
+    <div class="content">
+      <p>Hello <%= providerName %>,</p>
+      
+      <p>You have been assigned a new booking for <strong><%= serviceName %></strong>.</p>
+      
+      <div class="details">
+        <h3 style="margin-top: 0;">Booking Details:</h3>
+        <p><strong>Customer:</strong> <%= customerName %></p>
+        <p><strong>Service:</strong> <%= serviceName %></p>
+        <p><strong>Scheduled Date:</strong> <%= date %></p>
+        <p><strong>Customer Notes:</strong> <%= notes %></p>
+        <p><strong>Booking ID:</strong> <%= bookingId %></p>
+      </div>
+      
+      <p>Please log in to your provider dashboard to view the complete details and update the booking status as needed.</p>
+      
+      <a href="<%= process.env.CLIENT_URL %>/provider/dashboard" class="button">View Booking</a>
+      
+      <p>If you have any questions or need to make changes to this booking, please contact our support team at <a href="mailto:<%= adminEmail %>"><%= adminEmail %></a>.</p>
+      
+      <p>Best regards,<br>The RightBridge Team</p>
+    </div>
+    <div class="footer">
+      <p>© <%= new Date().getFullYear() %> RightBridge. All rights reserved.</p>
+      <p>This is an automated message, please do not reply directly to this email.</p>
+    </div>
+  </div>
+</body>
+</html>
