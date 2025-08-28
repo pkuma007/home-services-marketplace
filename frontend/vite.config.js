@@ -9,7 +9,7 @@ export default defineConfig({
     host: true, // This makes the server accessible on the local network
     proxy: {
       '/api': {
-        target: 'http://localhost:5001',
+        target: 'https://rightbridge.onrender.com',
         changeOrigin: true,
       },
     },

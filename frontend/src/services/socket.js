@@ -2,7 +2,7 @@
 import { io } from 'socket.io-client';
 
 // Use Vite environment variable for the backend URL
-const SOCKET_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const SOCKET_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001';
 let socket;
 
 export const connectSocket = () => {
