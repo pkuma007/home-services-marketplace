@@ -5,6 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
+    allowedHosts: ['rightbridge-x9o1.onrender.com'],
     host: true, // This makes the server accessible on the local network
     proxy: {
       '/api': {
